@@ -1,0 +1,519 @@
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	font-size: 1.2rem; /* Base font size */
+    font-family: 'Geist';
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+/* ------ Media ------ */
+img {
+	/*
+    max-width: 100%;         //esta propiedad en la imagen hace que la imagen se ajuste al contenedor sin desbordarse
+    max-height: 100%;
+	*/
+	pointer-events: none !important;
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* ------------ Animations ----------- */
+.slide {
+	-webkit-animation:slide .6s cubic-bezier(0.2, 0.6, 0.2, 1);
+	-moz-animation:slide .6s cubic-bezier(0.2, 0.6, 0.2, 1);
+	animation:slide .6s cubic-bezier(0.2, 0.6, 0.2, 1);
+	-webkit-animation-fill-mode:backwards;
+	-moz-animation-fill-mode:backwards;
+	animation-fill-mode:backwards;
+}
+/* ------ Delays ------ */
+.delay01 { -webkit-animation-delay: .4s; animation-delay: .4s;}
+.delay02 { -webkit-animation-delay: .8s; animation-delay: .8s;}
+.delay03 { -webkit-animation-delay: .9s; animation-delay: .9s;}
+
+
+/* ------------ Header ------------ */
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+	padding: 40px 0;
+	box-sizing: border-box;
+
+	max-width: 1200px;
+	left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+.logo,
+.header a {
+	font-family: 'Geist';
+	color: #111111;
+	font-weight: 500;
+	font-size: 1.375rem;
+}
+.header a:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/*  se utiliza media queries - que ajusta el diseño dependiendo de la pantalla  */
+@media screen and (max-width: 767px) {    
+	.header {
+		padding: 20px;
+	}
+	.logo,
+	.header a {
+		font-weight: 500;
+		font-size: 1.125rem;
+	}
+}
+
+/* ------------ Hero Home ------------ */
+
+.hero {
+	max-width: 1200px;
+	margin: 0 auto;
+
+	padding: 24vh 0 16vh 0;
+}
+h1 {
+	font-size: 4.6vw;
+	font-size: 4.5rem;
+	line-height: 120%;
+    font-family: 'Geist';
+	font-weight: 600;
+	color: #111111;
+}
+
+button {
+	font-size: 1.7rem;
+	line-height: 120%;
+    font-family: 'Geist';
+	font-weight: 600;
+	color: #ffffff;
+	background-color: rgb(145, 112, 136);
+	padding: 10px 20px;
+	border-radius: 50px;
+	text-align: center;
+	border-color: #945f8d;
+	width: 200px;
+	height: 60px;
+	margin-left: 1700px;
+	margin-top: 5px ;
+}
+
+.bienvenida {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 50px; 
+}
+
+@media screen and (max-width: 767px) {
+	.hero {
+		margin: 0 20px;
+		max-width: 100%;
+		padding: 16vh 0 8vh 0;
+	}	
+	h1 {
+		font-size: 2.2rem;
+		line-height: 120%;
+		max-width: 100%;
+	}
+}
+
+/* ------------ Homepage Work Section ------------ */
+
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between; 
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.work-item {
+	width: calc(50% - 60px);
+	margin-bottom: 100px;
+	text-align: center;
+	box-sizing: border-box;
+    display: inline-block;
+}
+
+.work-item:nth-child(2n-2) {
+	position: relative;
+	top: 200px;
+	top: 300px; 
+}
+
+.work-item-image {
+	border-radius: 24px;
+	overflow: hidden;
+	height: 640px;	
+	transition: all .8s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.work-item-image:hover {
+	transform: scale(.95);
+	transition: all .8s cubic-bezier(0.2, 0.6, 0.2, 1);
+	cursor: pointer;
+}
+
+.work-item img {
+	display: block;
+	width: 100%;
+	height: 100%;
+ 	object-fit: cover;
+	transition: all .8s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.work-item:hover img {
+	transform: scale(1.1);
+	transition: all .8s cubic-bezier(0.2, 0.6, 0.2, 1);
+	cursor: pointer;
+}
+.work-item-info {
+	text-align: center;
+	margin-top: 24px;
+}
+
+.work-item-company-1 {
+	color: #b8603e;
+    font-family: 'Geist';
+	font-weight: 500;
+	font-size: 2.000rem;
+	line-height: 160%;
+	display: block;
+	text-decoration: none;
+}
+
+.work-item-company-2 {
+	color: #3a498a;
+    font-family: 'Geist';
+	font-weight: 500;
+	font-size: 2.000rem;
+	line-height: 160%;
+	display: block;
+	text-decoration: none;
+
+}
+
+.work-item-company-3 {
+	color: #945f8d;
+    font-family: 'Geist';
+	font-weight: 500;
+	font-size: 2.000rem;
+	line-height: 160%;
+	display: block;
+	text-decoration: none;
+}
+
+.work-item-company-4 {
+	color: #4e8335;
+    font-family: 'Geist';
+	font-weight: 500;
+	font-size: 2.000rem;
+	line-height: 160%;
+	display: block;
+	text-decoration: none;
+}
+
+.work-item-company-5 {
+	color: #c95722;
+    font-family: 'Geist';
+	font-weight: 500;
+	font-size: 2.000rem;
+	line-height: 160%;
+	display: block;
+	text-decoration: none;
+}
+
+
+
+.work-item-description {
+	color: #666666;
+    font-family: 'Geist';
+	font-weight: 300;
+	font-size: 1.700rem;
+	display: block;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+	.grid {
+		padding: 20px;
+	}
+	.work-item  {
+	 	width: 100%;
+		margin-bottom: 40px;
+	}
+	.work-item:nth-child(2n-2) {
+		top: 0;
+	}
+	.work-item-image {
+		height: 480px;
+	}
+	.work-item-info {
+		margin-top: 12px;
+	}
+	.work-item-company {
+		font-size: 1.125rem;
+		font-weight: 600;
+	}
+	.work-item-description {
+		font-size: 1rem;
+		font-weight: 400;
+	}
+  }
+
+
+
+/* ------------ Homepage About Section ------------ */
+
+.about-me {
+    margin: 0px auto;
+	max-width: 45vw;
+    max-width: 760px;
+    padding: 20vw 0 12vw 0; 
+	padding: 10vw 0 12vw 0; 
+}
+p {
+	line-height: 160%;
+    font-family: 'Geist';
+	color: #111111;
+	color: #333333;
+	font-weight: 300;
+	font-size: 1.700rem;
+	
+}
+.description a {
+	color: #111111;
+    font-family: 'Geist';
+	font-weight: 500;
+	font-size: 1.375rem;
+	padding-top: 30px;
+	display: block;
+}
+.description a:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+.contact {
+	margin-top: 12vw;;
+}
+p span {
+	line-height: 160%;
+    font-family: 'Geist';
+	color: #666666;
+	font-weight: 300;
+	font-size: inherit;
+}
+.email {
+	font-family: 'Geist';
+	color: #111111;
+	font-weight: 600;
+	font-size: 4rem;
+	font-size: 2.7vw;
+	cursor: pointer;
+}
+
+
+@media screen and (max-width: 767px) {
+	.about-me {
+		max-width: 100%;
+		margin: 0px 20px;
+		padding: 20vh 0;
+	}
+	p {
+		font-weight: 400;
+		font-size: 1.125rem;
+	}
+	.description a {
+		font-weight: 600;
+		font-size: 1.125rem;
+		padding-top: 20px;
+	}
+	.contact {
+		margin-top: 15vh;;
+	}
+	.email {
+		font-size: 8vw;
+	}
+}
+
+/* ------------ Footer ------------ */
+
+footer {
+	max-width: 760px;
+    margin: 0 auto;
+    font-family: 'Geist';
+	color: #888888;
+	font-weight: 400;
+	font-size: 1.700rem;
+	padding: 40px;
+}
+
+@media screen and (max-width: 767px) {
+	footer {
+		max-width: 100%;
+		padding: 20px;
+	}
+}
+
+/* ------------ About Page ------------ */
+
+.about-page {
+	padding: 16vh 0;
+}
+.about {
+	margin: 0 auto;
+	box-sizing: border-box;
+	max-width: 780px;
+	padding: 4vh 0;
+
+}
+.about .text {
+	margin-bottom: 40px;
+}
+.photo-dejan {
+	margin: 0 auto;
+	width: 100%;
+    max-width: 980px;
+	max-width: 1200px;
+}
+h2 {
+	color: #919191;
+    font-family: 'Geist';
+	font-weight: 500;
+	font-size: 2.75rem;
+	line-height: 120%;
+	margin: 60px 0 40px 0;
+}
+h4 {
+	color: #111111;
+    font-family: 'Geist';
+	font-weight: 500;
+	font-size: 2rem;
+	line-height: 140%;
+	margin: 80px 0 20px 0;
+}
+.multi-row-grid {
+	display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.multi-row {
+	margin-bottom: 20px;
+	display: flex;
+    flex-direction: column;
+}
+p.title {
+	color: #111111;
+	font-weight: 400;
+}
+p.entity {
+	font-size: 1.1rem;
+	line-height: 160%;
+}
+p.years {
+	color: #666666;
+	font-size: 1rem;
+	font-weight: 300;
+	line-height: 160%;
+}
+.contact-options {
+	margin-top: 40px;
+}
+.contact-options a {
+	line-height: 160%;
+    font-family: 'Geist';
+	color: #111111;
+	font-weight: 400;
+	font-size: 1.375rem;
+}
+.contact-options a:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+
+@mediaX screen and (min-width: 768px) and (max-width: 1199px) {
+	.about {
+		max-width: 70vw;
+	}
+	.photo-dejan {
+		width: 80vw;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.about-page {
+		padding: 12vh 0;
+	}
+	.about {
+		margin: 0 20px;
+		max-width: 100%;
+	}
+	.about .text {
+		margin-bottom: 20px;
+	}
+	.photo-dejan {
+		width: 100%;
+		display: block;
+		padding: 0 20px;
+		box-sizing: border-box;
+		height: 360px;
+		object-fit: cover;
+	}
+	h2 {
+		font-weight: 600;
+		font-size: 2rem;
+		margin: 40px 0 20px 0;
+	}
+	h4 {
+		font-weight: 600;
+		font-size: 1.5rem;
+		margin: 40px 0 20px 0;
+	}
+	.multi-row-grid {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	p.title {
+		font-weight: 500;
+	}
+}
+
+
+
+
